@@ -24,6 +24,7 @@
 	btest = !sh -c "~/bash/functions/gitbrprot.sh"
 	cmp = !sh -c '~/bash/functions/gitbrprot.sh && ~/bash/functions/dotnettest.sh && git add . && git commit -m \"$0\" && git push -u origin HEAD'
 	cmpn = !sh -c ''~/bash/functions/gitbrprot.sh && git add . && git commit -m \"$0\" && git push -u origin HEAD'
+	cleanall = !sh -c "~/bash/functions/gitfullclean.sh"
     co = checkout
     cod = checkout dev
     codp = !sh -c 'git checkout dev && git pull'
