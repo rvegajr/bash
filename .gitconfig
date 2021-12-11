@@ -1,36 +1,29 @@
 [core]
-	editor = 'C:/Program Files (x86)/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin
-	autocrlf = false
+	autocrlf = true
 	ignorecase = false
 [credential]
 	modalPrompt = true
 	helper = manager
-[http]
-	sslBackend = openssl
-	sslCAInfo = C:\\Program Files\\Git\\usr\\ssl\\certs\\ca-bundle.crt
-	sslCAInfo = C:/dev/ca-bundle.crt
-	sslVerify = false
-	postBuffer = 157286400
 [user]
 	name = Ricky Vega
 	email = Ricardo.Vega@pxd.com
 [alias]
-    st = status
+	st = status
 	stash = !sh -c 'git stash --include-untracked'
 	commit = !sh -c '~/bash/functions/gitbrprot.sh && git commit'
-    ci = commit
+	ci = commit
 	cm = !sh -c 'git add . && git commit -m \"$0\"'
 	test = !sh -c "~/bash/functions/dotnettest.sh"
 	btest = !sh -c "~/bash/functions/gitbrprot.sh"
 	cmp = !sh -c '~/bash/functions/gitbrprot.sh && ~/bash/functions/dotnettest.sh && git add . && git commit -m \"$0\" && git push -u origin HEAD'
-	cmpn = !sh -c ''~/bash/functions/gitbrprot.sh && git add . && git commit -m \"$0\" && git push -u origin HEAD'
-	cleanall = !sh -c "~/bash/functions/gitfullclean.sh"
-    co = checkout
-    cod = checkout dev
-    codp = !sh -c 'git checkout dev && git pull'
-    dev = !sh -c 'git checkout dev && git pull'
-    com = checkout master
-    comp = !sh -c 'git checkout master && git pull'
+	cmpn = !sh -c '~/bash/functions/gitbrprot.sh && git add . && git commit -m \"$0\" && git push -u origin HEAD'
+	cleanall = !sh -c "~/bash/functions/gitfullclean.sh && git clean -f -x"
+	co = checkout
+	cod = checkout dev
+	codp = !sh -c 'git checkout dev && git pull'
+	dev = !sh -c 'git checkout dev && git pull'
+	com = checkout master
+	comp = !sh -c 'git checkout master && git pull'
 	cob = checkout -b
 	cb = checkout -b
 	po = push -u origin HEAD
@@ -40,6 +33,3 @@
 	dotnet = !sh -c 'git dotnet'
 	brcl = !sh -c 'git branch | grep -v "dev" | grep -v "master" | xargs git branch -D'
 	
-	
-
-
