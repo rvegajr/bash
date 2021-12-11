@@ -27,3 +27,17 @@ then
     exit 1 # push will not execute
 fi
 exit 0 # push will execute
+
+protected_branch='develop'
+
+if [ $protected_branch = $current_branch ] 
+then
+    read -p "You're about to push develop, is that what you intended? [y|n] " -n 1 -r < /dev/tty
+    echo
+    if echo $REPLY | grep -E '^[Yy]$' > /dev/null
+    then
+        exit 0 # push will execute
+    fi
+    exit 1 # push will not execute
+fi
+exit 0 # push will execute
